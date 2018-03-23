@@ -11,7 +11,10 @@ public class Valuta {
 		return naziv;
 	}
 
-	public void setNaziv(String naziv) {
+	public void setNaziv(String naziv) throws Exception {
+		if (naziv == null || naziv.isEmpty()) {
+			throw new Exception("Greska");
+		}
 		this.naziv = naziv;
 	}
 
@@ -19,7 +22,10 @@ public class Valuta {
 		return skracenica;
 	}
 
-	public void setSkracenica(String skracenica) {
+	public void setSkracenica(String skracenica) throws Exception {
+		if (skracenica == null || skracenica.isEmpty()) {
+			throw new Exception("Greska");
+		}
 		this.skracenica = skracenica;
 	}
 
@@ -27,7 +33,10 @@ public class Valuta {
 		return kursevi;
 	}
 
-	public void setKursevi(LinkedList<Kurs> kursevi) {
+	public void setKursevi(LinkedList<Kurs> kursevi) throws Exception {
+		if (kursevi == null) {
+			throw new Exception("Greska");
+		}
 		this.kursevi = kursevi;
 	}
 
@@ -43,19 +52,19 @@ public class Valuta {
 
 	@Override
 	public boolean equals(Object obj) {
-		if(this == obj) {
+		if (this == obj) {
 			return true;
 		}
-		
-		if(obj == null) {
+
+		if (obj == null) {
 			return false;
 		}
-		
+
 		Valuta v = (Valuta) obj;
-		if(v.getNaziv().equals(this.getNaziv())) {
+		if (v.getNaziv().equals(this.getNaziv())) {
 			return true;
 		}
-		
+
 		return false;
 	}
 

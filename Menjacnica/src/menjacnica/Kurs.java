@@ -12,7 +12,10 @@ public class Kurs {
 		return datum;
 	}
 
-	public void setDatum(GregorianCalendar datum) {
+	public void setDatum(GregorianCalendar datum) throws Exception {
+		if(datum == null) {
+			throw new Exception("Los datum");
+		}
 		this.datum = datum;
 	}
 
@@ -20,7 +23,10 @@ public class Kurs {
 		return prodajni;
 	}
 
-	public void setProdajni(double prodajni) {
+	public void setProdajni(double prodajni) throws Exception {
+		if(prodajni < 0) {
+			throw new Exception("Greska");
+		}
 		this.prodajni = prodajni;
 	}
 
@@ -28,7 +34,10 @@ public class Kurs {
 		return srednji;
 	}
 
-	public void setSrednji(double srednji) {
+	public void setSrednji(double srednji) throws Exception {
+		if(srednji < 0) {
+			throw new Exception("Greska");
+		}
 		this.srednji = srednji;
 	}
 
@@ -36,7 +45,10 @@ public class Kurs {
 		return kupovni;
 	}
 
-	public void setKupovni(double kupovni) {
+	public void setKupovni(double kupovni) throws Exception {
+		if(kupovni < 0) {
+			throw new Exception("Greska");
+		}
 		this.kupovni = kupovni;
 	}
 
